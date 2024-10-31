@@ -8,7 +8,7 @@
 }
 
 #root {
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     background-color: rgb(235, 235, 243);
 }
@@ -23,14 +23,28 @@
 }
 
 .card {
-    background-color: #98aef1;
-    border-radius: 10px;
-    padding: 1em;
+
     
 }
 
 .add {
     margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+    background-color: #98aef1;
+    border-radius: 10px;
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: stretch;
+    gap: 0.3em;
+    padding: 1em;
+}
+
+.add * {
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    flex-grow: 1;
 }
 
 .list {
@@ -61,29 +75,35 @@
 .Completed {
     background-color: green;
 }
+.item button{
 
-.add {
-    margin-bottom: 1.5em;
-    display: flex;
-    justify-content: stretch;
-    gap: 0.3em;
-  }
+    padding: 0.5em 1em;
+    cursor: pointer;
+    background-color: rgb(77, 124, 71);
+    color: #fff;
+    border-radius: 5px;}
   
   .add input{
     flex-grow: 1;
   }
   
-  .add button, .item button {
+.add button {
     padding: 0.5em 1em;
     cursor: pointer;
+    background-color: rgb(21, 83, 16);
+    color: #fff;
+    border-radius: 5px;
   }
   
-  
-  .item p:first-of-type{
-    font-weight: 700;
+.buttons {
+    display: flex;
+    gap: 2.8em;
   }
-  
-  .item p:nth-of-type(2){
-    font-weight: 300;
-    color:#838383;
+
+  .progressBtn {
+    padding: 0.5em 1em;
+    cursor: pointer;
+    background-color: rgb(48, 173, 39);
+    color: #fff;
+    border-radius: 5px;
   }

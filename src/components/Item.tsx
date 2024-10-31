@@ -76,8 +76,8 @@ export default function Item({ todo, setRefresh }: Props) {
             </div>
 
             <div className="buttons">
-            {error && <p>{error}</p>}
-            {info && <p>{info}</p>}
+            {error && <p className='error'>{error}</p>}
+            {info && <p className='info'>{info}</p>}
                 {
                 todo.status != 'Completed' &&
                 <button onClick={handelProgressBtn} className='progressBtn'>

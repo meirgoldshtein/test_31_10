@@ -92,7 +92,18 @@
     color: #fff;
     border-radius: 5px;
   }
-
+.item .error {
+    color: red;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 0.5em;
+}
+.item .info {
+    color: green;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin: 0.5em;
+}
 
 .add input{
     flex-grow: 1;

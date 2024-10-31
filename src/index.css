@@ -75,15 +75,26 @@
 .Completed {
     background-color: green;
 }
-.item button{
+.item .deleteBtn{
 
     padding: 0.5em 1em;
     cursor: pointer;
-    background-color: rgb(77, 124, 71);
+    background-color: rgb(182, 13, 13);
     color: #fff;
-    border-radius: 5px;}
+    border-radius: 5px;
+  }
   
-  .add input{
+  .item .progressBtn{
+
+    padding: 0.5em 1em;
+    cursor: pointer;
+    background-color: rgb(6, 125, 26);
+    color: #fff;
+    border-radius: 5px;
+  }
+
+
+.add input{
     flex-grow: 1;
   }
   

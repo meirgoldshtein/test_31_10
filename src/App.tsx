@@ -8,7 +8,7 @@ import { useEffect, useState } from "react"
 function App() {
 
   const [todos, setTodos] = useState<Todo[]>([])
-  const[refresh, setRefresh] = useState(false)
+  const [refresh, setRefresh] = useState(false)
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const apikey = '8184480'
@@ -21,6 +21,7 @@ function App() {
       setTodos(data);
       console.log(data);
       setIsLoading(false);
+      setError('');
     } catch (error: any) {
       setError(error.message);
       setTodos([]);
@@ -37,7 +38,9 @@ function App() {
   return (
     <div className='app'>
       <Add setRefresh={setRefresh} />
-      <List todos={todos}  setRefresh={setRefresh} />
+      {error && <p>{error}</p>}
+      {isLoading && <p>Loading...</p>}
+      <List todos={todos} setRefresh={setRefresh} />
     </div>
   )
 }

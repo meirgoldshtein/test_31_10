@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+#root {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(235, 235, 243);
+}
+
+.app {
+    height: 100%;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1.2em;
+    background: #d4d7e8;
+}
+
+.card {
+    background-color: #98aef1;
+    border-radius: 10px;
+    padding: 1em;
+}
+
+.add {
+    margin-bottom: 1em;
+}
+
+.list {
+    margin-bottom: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+.item {
+    margin-bottom: 1em;
+    background-color: rgb(172, 223, 223);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+    border-bottom: 1px solid #fff;
+}
+
+.add {
+    margin-bottom: 1.5em;
+    display: flex;
+    justify-content: stretch;
+    gap: 0.3em;
+  }
+  
+  .add input{
+    flex-grow: 1;
+  }
+  
+  .add button, .item button {
+    padding: 0.5em 1em;
+    cursor: pointer;
+  }
+  
+  
+  .item p:first-of-type{
+    font-weight: 700;
+  }
+  
+  .item p:nth-of-type(2){
+    font-weight: 300;
+    color:#838383;
+  }

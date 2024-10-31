@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Todo from '../models/todoModel'
 interface Props {
     todo: Todo
@@ -16,8 +16,27 @@ export default function Item({ todo, setTodos, setRefresh }: Props) {
     //         return t
     //     })})
     // }
-const handelProgressBtn = () => {
-    
+    const[error, setError] = useState('');
+    const apikey = '8184480'
+    const updateTodo = async() => {
+        try {
+            const query = await fetch(`https://reactexambackend.onrender.com/missions/${apikey}/progress/${todo.id}`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            const data = await query.json()
+            console.log(data);
+        }
+        catch (error: any) {
+            setError(error.message)
+            console.log(error);
+        }      
+    }
+const handelProgressBtn = async() => {
+    await updateTodo()
+    setRefresh(true)
 }
 
     const handelDeleteBtn = () => {
@@ -32,7 +51,7 @@ const handelProgressBtn = () => {
             <p>{todo.description}</p>
             <p>{todo.priority}</p>
             <p className={todo.status}>{todo.status}</p>
-            <button>Progress</button>
+            { todo.status != 'Completed' && <button onClick={handelProgressBtn}>Progress</button>}
             <button onClick={handelDeleteBtn}>❌</button>
         </div>
     )

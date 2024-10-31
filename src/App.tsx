@@ -7,9 +7,11 @@ import { useEffect, useState } from "react"
 function App() {
 
   const [todos, setTodos] = useState<Todo[]>([])
+  const[refresh, setRefresh] = useState(false)
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const apikey = '8184480'
+
   const fetchData = async () => {
     setIsLoading(true);
     try {
@@ -28,11 +30,11 @@ function App() {
 
   useEffect(() => {
     fetchData();
-  }, [])
+  }, [refresh]);
 
   return (
     <div className='app'>
-      <Add setTodos={setTodos} />
+      <Add setRefresh={setRefresh} />
       <List todos={todos} setTodos={setTodos} />
     </div>
   )

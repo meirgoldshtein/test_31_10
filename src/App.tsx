@@ -17,7 +17,7 @@ function App() {
     try {
       const response = await fetch(`https://reactexambackend.onrender.com/missions/${apikey}`);
       const data = await response.json();
-      setTodos((arr :any) => [...arr, ...data]);
+      setTodos(data);
       console.log(data);
       setIsLoading(false);
     } catch (error: any) {
@@ -30,12 +30,13 @@ function App() {
 
   useEffect(() => {
     fetchData();
+    console.log(refresh)
   }, [refresh]);
 
   return (
     <div className='app'>
       <Add setRefresh={setRefresh} />
-      <List todos={todos} setTodos={setTodos} setRefresh={setRefresh} />
+      <List todos={todos}  setRefresh={setRefresh} />
     </div>
   )
 }

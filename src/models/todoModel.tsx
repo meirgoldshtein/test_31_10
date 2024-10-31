@@ -7,7 +7,7 @@ enum Status {
 }
 
 export default class Todo {
-    public id: string
+    public _id: string
 
     public status: Status = Status.pending
     public createdAt: Date 
@@ -16,7 +16,7 @@ export default class Todo {
         public priority : string,
         public description : string
     ) {
-        this.id = v4()
+        this._id = v4()
         this.createdAt = new Date()
 
     }

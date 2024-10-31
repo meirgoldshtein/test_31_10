@@ -4,14 +4,14 @@ import Item from './Item'
 
 interface Props {
     todos: Todo[];
-    setRefresh: (x: boolean) => void
-    setTodos: (x:(todos: Todo[]) => Todo[]) => void
+    setRefresh: (x:( x :boolean)=> boolean) => void
+    
 }
 
-export default function List({todos, setTodos, setRefresh}: Props) {
+export default function List({todos,  setRefresh}: Props) {
   return (
     <div className='list card'>
-        {todos.map((todo) => <Item todo={todo} setTodos={setTodos} key={todo.id} setRefresh={setRefresh} />)}
+        {todos.map((todo) => <Item todo={todo}  key={todo._id} setRefresh={setRefresh} />)}
     </div>
   )
 }

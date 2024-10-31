@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import Todo from '../models/todoModel'
 interface Props {
-  setRefresh: (x: boolean) => void
+  setRefresh: (x:(x:boolean)=> boolean) => void
 
 }
 
@@ -23,7 +23,7 @@ export default function Add({ setRefresh }: Props) {
       })
       const data = await query.json()
       console.log(data);
-      setRefresh(true)
+      setRefresh((prev) => !prev)
     } catch (error: any) {
       setError(error.message)
       console.log(error);

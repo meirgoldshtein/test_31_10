@@ -2,9 +2,10 @@ import React from 'react'
 import Todo from '../models/todoModel'
 interface Props {
     todo: Todo
+    setRefresh: (x: boolean) => void
     setTodos: (x: (todos: Todo[]) => Todo[]) => void
 }
-export default function Item({ todo, setTodos }: Props) {
+export default function Item({ todo, setTodos, setRefresh }: Props) {
     // const handelCompletedBtn = () => {
     //     setTodos((todos) => {
     //     return todos.map(t => {
@@ -15,21 +16,24 @@ export default function Item({ todo, setTodos }: Props) {
     //         return t
     //     })})
     // }
+const handelProgressBtn = () => {
+    
+}
 
     const handelDeleteBtn = () => {
         setTodos((todos) => {
             console.log('item success deleted');
-        return todos.filter(t => t.id !== todo.id)
+            return todos.filter(t => t.id !== todo.id)
         })
-        
+
     }
     return (
-        <div className={'item' + todo.status} >
+        <div className={`${todo.status} item`}  >
             <p>{todo.description}</p>
             <p>{todo.priority}</p>
             <p className={todo.status}>{todo.status}</p>
-
-                <button onClick={handelDeleteBtn}>❌</button>
+            <button>Progress</button>
+            <button onClick={handelDeleteBtn}>❌</button>
         </div>
     )
 }

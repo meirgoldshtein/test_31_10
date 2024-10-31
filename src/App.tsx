@@ -15,7 +15,7 @@ function App() {
   const fetchData = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`https://reactexambackend.onrender.com/missions/:${apikey}`);
+      const response = await fetch(`https://reactexambackend.onrender.com/missions/${apikey}`);
       const data = await response.json();
       setTodos((arr :any) => [...arr, ...data]);
       console.log(data);
@@ -35,7 +35,7 @@ function App() {
   return (
     <div className='app'>
       <Add setRefresh={setRefresh} />
-      <List todos={todos} setTodos={setTodos} />
+      <List todos={todos} setTodos={setTodos} setRefresh={setRefresh} />
     </div>
   )
 }

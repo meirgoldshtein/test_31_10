@@ -1,9 +1,9 @@
 import { v4 } from "uuid"
 
 enum Status {
-    pending = 'pending',
-    progress = 'progress',
-    completed = 'completed'
+    pending = 'Pending',
+    progress = 'In Progress',
+    completed = 'Completed'
 }
 
 export default class Todo {

@@ -6,7 +6,7 @@ interface Props {
 }
 
 export default function Add({ setRefresh }: Props) {
-  const obj = useRef({ name: '', priority: '', description: '' })
+  const obj = useRef({ name: '', priority: 'Low', description: '' })
   const [title, setTitle] = useState('')
   const [error, setError] = useState('');
   const apikey = '8184480'
@@ -32,6 +32,7 @@ export default function Add({ setRefresh }: Props) {
 
 
   const handleSubmit = async () => {
+    console.log(obj.current);
     await postTodo()
   }
   return (
@@ -42,12 +43,13 @@ export default function Add({ setRefresh }: Props) {
       />
       <input type="text"
         placeholder='Your name here ...'
-        onChange={(e) => obj.current.description = e.target.value}
+        onChange={(e) => {obj.current.name = e.target.value;console.log(obj.current.name)}}
       />
-      <input type="text"
-        placeholder='Your priority here ...'
-        onChange={(e) => obj.current.description = e.target.value}
-      />
+      <select name="priority" id="" onChange={(e) => obj.current.priority = e.target.value}>
+        <option value="Low">Low</option>
+        <option value="Medium">Medium</option>
+        <option value="High">High</option>
+      </select>
       <button onClick={handleSubmit}>Add</button>
     </div>
 

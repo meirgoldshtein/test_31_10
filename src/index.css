@@ -26,6 +26,7 @@
     background-color: #98aef1;
     border-radius: 10px;
     padding: 1em;
+    
 }
 
 .add {
@@ -43,10 +44,22 @@
     background-color: rgb(172, 223, 223);
     border-radius: 10px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0.5em;
     border-bottom: 1px solid #fff;
+}
+
+.Pending {
+    background-color: red;
+}
+
+.In Progress {
+    background-color: orange;
+}
+.Completed {
+    background-color: green;
 }
 
 .add {
